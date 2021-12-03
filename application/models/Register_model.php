@@ -7,7 +7,7 @@ class Register_model extends MY_Model
 
 	protected $table = 'user';
 
-	public function getDevalutValues()
+	public function getDefaultValues()
 	{
 		return [
 			'name'      => '',

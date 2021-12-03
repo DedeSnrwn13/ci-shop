@@ -1,5 +1,4 @@
-<?php 
-
+<?php
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -9,7 +8,7 @@ class Register extends MY_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		$is_login = $this->session->userdata('is_login');
+		$is_login	= $this->session->userdata('is_login');
 
 		if ($is_login) {
 			redirect(base_url());
@@ -20,16 +19,15 @@ class Register extends MY_Controller
 	public function index()
 	{
 		if (!$_POST) {
-			$input = (object) $this->register->getDevaultValues();
+			$input	= (object) $this->register->getDefaultValues();
 		} else {
-			$input = (object) $this->input->post(null, true);
+			$input 	= (object) $this->input->post(null, true);
 		}
 
 		if (!$this->register->validate()) {
-			$data['title'] = 'Register';
-			$data['input'] = $input;
-			$data['page']  = 'pages/auth/register';
-
+			$data['title']	= 'Register';
+			$data['input']	= $input;
+			$data['page']	= 'pages/auth/register';
 			$this->view($data);
 			return;
 		}
@@ -42,6 +40,7 @@ class Register extends MY_Controller
 			redirect(base_url('/register'));
 		}
 	}
+	
 
 }
 
