@@ -27,6 +27,8 @@ class Category_model extends MY_Model
 				'rules' => 'trim|required'
 			]
 		];
+
+		return $validationRules;
 	}
 
 }

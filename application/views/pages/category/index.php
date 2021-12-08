@@ -6,7 +6,7 @@
 			<div class="card-header">
 				<span>Kategori</span>
 				<a
-				href="/admin-category-form.html"
+				href="<?= base_url('category/create') ?>"
 				class="btn btn-sm btn-secondary"
 				>Tambah</a
 				>
