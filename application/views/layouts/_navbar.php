@@ -31,7 +31,7 @@
 				Manage
 				</a>
 				<div class="dropdown-menu" aria-labelledby="dropdown-1">
-					<a href="/admin-category.html" class="dropdown-item"
+					<a href="<?= base_url('category') ?>" class="dropdown-item"
 						>Kategori</a
 					>
 					<a href="/admin-product.html" class="dropdown-item">Produk</a>

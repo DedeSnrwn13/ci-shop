@@ -47,19 +47,23 @@
 							<td><?= $row->title ?></td>
 							<td><?= $row->slug ?></td>
 							<td>
-								<a href="<?= base_url("category/edit/$row->id") ?>">
-									<button class="btn btn-sm">
-									<i class="fas fa-edit text-info"></i>
-									</button>
-								</a>
+								<?= form_open("category/delete/$row->id", ['method' => 'POST']) ?>
+									<?= form_hidden('id', $row->id) ?>
 
-								<button
-									class="btn btn-sm"
-									type="submit"
-									onclick="return confirm('Are you sure?');"
-								>
-									<i class="fas fa-trash text-danger"></i>
-								</button>
+									<a href="<?= base_url("category/edit/$row->id") ?>">
+										<button class="btn btn-sm">
+										<i class="fas fa-edit text-info"></i>
+										</button>
+									</a>
+
+									<button
+										class="btn btn-sm"
+										type="submit"
+										onclick="return confirm('Apakah yakin ingin menghapus?');"
+									>
+										<i class="fas fa-trash text-danger"></i>
+									</button>
+								<?= form_close() ?>
 							</td>
 						</tr>
 					<?php endforeach ?>
