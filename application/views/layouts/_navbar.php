@@ -31,10 +31,10 @@
 				Manage
 				</a>
 				<div class="dropdown-menu" aria-labelledby="dropdown-1">
-					<a href="<?= base_url('category') ?>" class="dropdown-item"
+					<a href="<?= base_url('category'); ?>" class="dropdown-item"
 						>Kategori</a
 					>
-					<a href="/admin-product.html" class="dropdown-item">Produk</a>
+					<a href="<?= base_url('product'); ?>" class="dropdown-item">Produk</a>
 					<a href="/admin-order.html" class="dropdown-item">Order</a>
 					<a href="/admin-users.html" class="dropdown-item">Pengguna</a>
 				</div>
