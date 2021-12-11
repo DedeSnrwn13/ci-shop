@@ -33,7 +33,7 @@ class Product extends MY_Controller
 
 	public function create()
 	{
-		if (! $POST) {
+		if (! $_POST) {
 			$input = (object) $this->product->getDefaultValues();
 		} else {
 			$input = (object) $this->input->post(null, true);
@@ -67,6 +67,25 @@ class Product extends MY_Controller
 		}
 
 		redirect(base_url('product'));
+	}
+
+	public function unique_slug()
+	{
+		$slug = $this->input->post('slug');
+		$id   = $this->input->post('id');
+		$product = $this->product->where('slug', $slug)->first();
+		
+		if ($product) {
+			if ($id == $product->id) {
+				return true;
+			}			
+
+			$this->load->library('form_validation');
+			$this->form_validation->set_message('unique_slug', '%s sudah digunakan!');
+			return false;
+		} 
+		
+		return true;
 	}
 }
 
