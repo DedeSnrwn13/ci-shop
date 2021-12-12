@@ -52,6 +52,9 @@
 					<?php if($this->session->set_flashdata('image_error')) :  ?>
 						<small class="form-text text-danger"><?= $this->session->set_flashdata('image_error') ?> </small>
 					<?php endif; ?>
+					<?php if($input->image) : ?>
+						<img src="<?= base_url("/images/product/$input->image") ?>" alt="" height="150">
+					<?php endif; ?>
 				</div>
 				<button type="submit" class="btn btn-primary">Tambah</button>
 			<?= form_close(); ?>
