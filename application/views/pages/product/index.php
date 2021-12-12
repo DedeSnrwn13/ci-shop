@@ -68,7 +68,8 @@
 							</button>
 						</a>
 					
-						<form action="#">
+						<?= form_open(base_url("/product/delete/$row->id"), ['method' => 'POST']) ?>
+							<?= form_hidden('id', $row->id) ?>
 							<button
 								class="btn btn-sm"
 								type="submit"
@@ -76,7 +77,7 @@
 							>
 								<i class="fas fa-trash text-danger"></i>
 							</button>
-						</form>
+						<?= form_close() ?>
 					</td>
 				</tr>
 				<?php endforeach; ?>
