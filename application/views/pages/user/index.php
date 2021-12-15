@@ -60,7 +60,7 @@
 				<td><?= $row->role ?></td>
 				<td><?= $row->is_active ? 'Aktif' : 'Tidak Aktif' ?></td>
 				<td class="d-flex">
-					<a href="<?= base_url("user/edit/$row->id") ?>">
+					<a href="<?= base_url("user/edit/$row->id") ?>" class="btn btn-sm">
 						<i class="fas fa-edit text-info"></i>
 					</a>
 					<?= form_open(base_url("user/delete/$row->id"), ['method' => 'POST']) ?>

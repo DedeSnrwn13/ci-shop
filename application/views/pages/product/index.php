@@ -64,10 +64,8 @@
 					<td>Rp. <?= number_format($row->price, 0, ',', '.') ?>,-</td>
 					<td><?= $row->is_available ? 'Tersedia' : 'Kosong' ?></td>
 					<td class="d-flex">
-						<a href="<?= base_url("/product/edit/$row->id") ?>">
-							<button class="btn btn-sm">
-								<i class="fas fa-edit text-info"></i>
-							</button>
+						<a href="<?= base_url("/product/edit/$row->id") ?>" class="btn btn-sm">
+							<i class="fas fa-edit text-info"></i>
 						</a>
 					
 						<?= form_open(base_url("/product/delete/$row->id"), ['method' => 'POST']) ?>

@@ -49,10 +49,8 @@
 							<td><?= $row->title ?></td>
 							<td><?= $row->slug ?></td>
 							<td class="d-flex">
-								<a href="<?= base_url("category/edit/$row->id") ?>">
-									<button class="btn btn-sm">
+								<a href="<?= base_url("category/edit/$row->id") ?>" class="btn btn-sm">
 									<i class="fas fa-edit text-info"></i>
-									</button>
 								</a>
 								<?= form_open("category/delete/$row->id", ['method' => 'POST']) ?>
 									<?= form_hidden('id', $row->id) ?>
