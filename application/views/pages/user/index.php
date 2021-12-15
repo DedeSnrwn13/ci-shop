@@ -9,19 +9,21 @@
 			>Tambah</a
 			>
 			<div class="float-right">
-			<form action="">
+			<form action="<?= base_url('user/search') ?>" method="POST">
 				<div class="input-group">
 				<input
 					type="text"
 					class="form-control form-control-sm text-center"
 					placeholder="Cari.."
+					name="keyword"
+					value="<?= $this->session->userdata('keyword') ?>"
 				/>
 				<div class="input-group-append">
 					<button class="btn btn-secondary btn-sm" type="submit">
 					<i class="fas fa-search"></i>
 					</button>
-					<a href="#" class="btn btn-secondary btn-sm">
-					<i class="fas fa-eraser"></i>
+					<a href="<?= base_url('user/reset') ?>" class="btn btn-secondary btn-sm">
+						<i class="fas fa-eraser"></i>
 					</a>
 				</div>
 				</div>
@@ -61,15 +63,16 @@
 					<a href="<?= base_url("user/edit/$row->id") ?>">
 						<i class="fas fa-edit text-info"></i>
 					</a>
-					<form action="#">
+					<?= form_open(base_url("user/delete/$row->id"), ['method' => 'POST']) ?>
+						<?= form_hidden('id', $row->id) ?>
 						<button
 							class="btn btn-sm"
 							type="submit"
-							onclick="return confirm('Are you sure?');"
+							onclick="return confirm('Apakah yakin ingin menghapus?');"
 						>
 							<i class="fas fa-trash text-danger"></i>
 						</button>
-					</form>
+					<?= form_close()?>
 				</td>
 				</tr>
 				<?php endforeach ?>
