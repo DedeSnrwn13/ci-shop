@@ -58,10 +58,8 @@
 				<td><?= $row->role ?></td>
 				<td><?= $row->is_active ? 'Aktif' : 'Tidak Aktif' ?></td>
 				<td class="d-flex">
-					<a href="#">
-						<button class="btn btn-sm">
+					<a href="<?= base_url("user/edit/$row->id") ?>">
 						<i class="fas fa-edit text-info"></i>
-						</button>
 					</a>
 					<form action="#">
 						<button
