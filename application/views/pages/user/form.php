@@ -59,7 +59,7 @@
 					<?php endif; ?>
 				</div>
 				<button type="submit" class="btn btn-primary">Tambah</button>
-			</form>
+			<?= form_close(); ?>
 		</div>
 		</div>
 	</div>
