@@ -13,6 +13,7 @@ class Home extends MY_Controller {
 				'product.description', 'product.image', 
 				'product.price', 'product.is_available',
 				'category.title AS category_title', 
+				'category.slug AS category_slug', 
 			]
 		)->join('category')->where('product.is_available', 1)->paginate($page)->get();
 		
