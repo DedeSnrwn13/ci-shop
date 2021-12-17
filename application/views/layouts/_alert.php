@@ -10,7 +10,7 @@
 	}
 
 	if ($error) {
-		$alert_status = 'alert-error';
+		$alert_status = 'alert-danger';
 		$status       = 'Error!';
 		$message      = $error;
 	}

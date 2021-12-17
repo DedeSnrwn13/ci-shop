@@ -4,7 +4,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Cart extends MY_Controller 
 {
-	
 	private $id;
 
 	public function __construct()
@@ -21,7 +20,8 @@ class Cart extends MY_Controller
 	
 	public function add()
 	{
-		if (! $_POST) {	
+		if (! $_POST || $this->input->post('qty') < 1) {	
+			$this->session->set_flashdata('error', 'Kuantitas produk tidak boleh kosong!');
 			redirect(base_url());
 		} else {
 			$input = (object) $this->input->post(null, true);
@@ -30,9 +30,9 @@ class Cart extends MY_Controller
 			$product = $this->cart->where('id', $input->id_product)->first();
 
 			$subtotal = $product->price * $input->qty;
-			
+
 			$this->cart->table = 'cart';
-			$cart = $this->cart->where('id', $this->id)->where('id_product', $input->id_product)->first();
+			$cart = $this->cart->where('id_user', $this->id)->where('id_product', $input->id_product)->first();
 
 			if ($cart) {
 				$data = [

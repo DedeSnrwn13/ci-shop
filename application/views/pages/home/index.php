@@ -37,11 +37,12 @@
 								</a>
 							</div>
 							<div class="card-footer">
-								<form action="">
+								<form action="<?= base_url('/cart/add'); ?>" method="POST">
+									<input type="hidden" name="id_product" value="<?= $row->id ?>">
 									<div class="input-group">
-										<input type="number" class="form-control" />
+										<input type="number" name="qty" class="form-control" />
 										<div class="input-group-append">
-											<button class="btn btn-primary">Add to Cart</button>
+											<button type="submit" class="btn btn-primary">Add to Cart</button>
 										</div>
 									</div>
 								</form>
