@@ -45,8 +45,9 @@
 					</td>
 					<td class="text-center">Rp. <?= number_format($row->subtotal, 0, ',', '.'); ?>,-</td>
 					<td>
-						<form action="">
-							<button class="btn btn-danger">
+						<form action="<?= base_url("cart/delete/$row->id") ?>" method="POST">
+							<input type="hidden" name="id" value="<?= $row->id ?>">
+							<button class="btn btn-danger" onclick="return confirm('Apakah yakin ingin menghapus?')">
 								<i class="fas fa-trash"></i>
 							</button>
 						</form>
