@@ -25,8 +25,8 @@
 
 	function getCart()
 	{
-		$CI    =& get_instance();
-		$userId = $CI->session->userdta('id');
+		$CI     =& get_instance();
+		$userId = $CI->session->userdata('id');
 
 		if ($userId) {
 			$query = $CI->db->where('id_user', $userId)->count_all_results('cart');
