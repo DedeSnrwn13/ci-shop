@@ -26,9 +26,11 @@
 					</td>
 					<td>Rp. <?= number_format($row->price, 0, ',', '.') ?>,-</td>
 					<td>
-						<form action="">
+						<form action="<?= base_url("cart/update/$row->id") ?>" method="POST">
+							<input type="hidden" name="id" value="<?= $row->id ?>">
 							<div class="input-group">
 								<input
+								name="qty"
 								type="number"
 								class="form-control text-center"
 								value="<?= $row->qty ?>"
