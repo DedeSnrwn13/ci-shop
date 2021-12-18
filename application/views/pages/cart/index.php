@@ -63,7 +63,7 @@
 			</table>
 		</div>
 		<div class="card-footer">
-			<a href="/checkout.html" class="btn btn-success float-right"
+			<a href="<?= base_url('/checkout') ?>" class="btn btn-success float-right"
 			>Checkout <i class="fas fa-angle-right"></i
 			></a>
 			<a href="<?= base_url('/') ?>" class="btn btn-warning text-white"
