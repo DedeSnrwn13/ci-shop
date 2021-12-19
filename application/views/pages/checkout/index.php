@@ -5,7 +5,8 @@
 			<div class="card">
 				<div class="card-header">Formulir Alamat Pengiriman</div>
 				<div class="card-body">
-					<form action="">
+					<form action="<?= base_url("/checkout/create") ?>" method="POST">
+						
 						<div class="form-group">
 							<label for="">Nama</label>
 							<input
@@ -13,8 +14,9 @@
 							class="form-control"
 							name="name"
 							placeholder="Masukkan nama penerima"
+							value="<?= $input->name ?>"
 							/>
-							<small class="form-text text-danger">Nama harus diisi.</small>
+							<?= form_error('name') ?>
 						</div>
 						<div class="form-group">
 							<textarea
@@ -24,10 +26,8 @@
 							cols="30"
 							rows="5"
 							placeholder="Masukkan Alamat lengkap penerima"
-							></textarea>
-							<small class="form-text text-danger"
-							>Alamat harus diisi.</small
-							>
+							><?= $input->address ?></textarea>
+							<?= form_error('address') ?>
 						</div>
 						<div class="form-group">
 							<label for="">Telepon</label>
@@ -36,10 +36,9 @@
 							class="form-control"
 							name="phone"
 							placeholder="Masukkan nomor telepon penerima"
+							<?= $input->address ?>
 							/>
-							<small class="form-text text-danger"
-							>Nomor Telepon harus diisi.</small
-							>
+							<?= form_error('phone') ?>
 						</div>
 
 						<button class="btn btn-primary" type="submit">Simpan</button>

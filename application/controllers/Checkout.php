@@ -56,7 +56,7 @@ class Checkout extends MY_Controller
 					->row()
 					->subtotal;
 		$data = [
-			'id_usaer' => $this->id,
+			'id_user' => $this->id,
 			'date' => date('YmdHis'),
 			'invoice' => $this->id.date('YmdHis'),
 			'total' => $total,
