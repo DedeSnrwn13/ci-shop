@@ -20,7 +20,7 @@
 							<?php foreach($content as $row) : ?>
 							<tr>
 								<td>
-									<a href="<?= $row->invoice ?>"
+									<a href="<?= base_url("/myorder/detail/$row->invoice") ?>"
 									><strong> #<?= $row->invoice ?></strong></a
 									>
 								</td>
