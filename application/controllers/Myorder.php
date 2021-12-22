@@ -43,6 +43,12 @@ class Myorder extends MY_Controller
 				'orders_detail.qty', 'orders_detail.subtotal', 'product.title',
 				'product.image', 'product.price'
 			])->join('product')->where('orders_detail.id_orders', $data['order']->id)->get();
+
+		if ($data['order']->status !== 'waiting') {
+			$this->myorder->table = 'orders_confirm';
+			$data['order_confirm'] = $this->myorder->where('id_orders', $data['order']->id)->first();
+		}
+
 		$data['page'] = 'pages/myorder/detail';
 
 		$this->view($data);
