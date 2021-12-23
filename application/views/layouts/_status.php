@@ -3,13 +3,19 @@
 if ($status == 'waiting') {
 	$badge_status = 'badge-primary';
 	$status = 'Menunggu Pembayaran';
-} elseif ($status == 'paid') {
+}
+
+if ($status == 'paid') {
 	$badge_status = 'badge-secondary';
 	$status = 'Dibayar';
-} elseif ($status == 'delivered') {
+}
+
+if ($status == 'delivered') {
 	$badge_status = 'badge-success';
 	$status = 'Dikirim';
-} else {
+}
+
+if ($status == 'cancel') {
 	$badge_status = 'badge-danger';
 	$status = 'Dibatalkan';
 }
