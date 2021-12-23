@@ -6,38 +6,19 @@
 				<div class="card-header">Formulir Alamat Pengiriman</div>
 				<div class="card-body">
 					<form action="<?= base_url("/checkout/create") ?>" method="POST">
-						
+
 						<div class="form-group">
 							<label for="">Nama</label>
-							<input
-							type="text"
-							class="form-control"
-							name="name"
-							placeholder="Masukkan nama penerima"
-							value="<?= $input->name ?>"
-							/>
+							<input type="text" class="form-control" name="name" placeholder="Masukkan nama penerima" value="<?= $input->name ?>" />
 							<?= form_error('name') ?>
 						</div>
 						<div class="form-group">
-							<textarea
-							name="address"
-							id=""
-							class="form-control"
-							cols="30"
-							rows="5"
-							placeholder="Masukkan Alamat lengkap penerima"
-							><?= $input->address ?></textarea>
+							<textarea name="address" id="" class="form-control" cols="30" rows="5" placeholder="Masukkan Alamat lengkap penerima"><?= $input->address ?></textarea>
 							<?= form_error('address') ?>
 						</div>
 						<div class="form-group">
 							<label for="">Telepon</label>
-							<input
-							type="text"
-							class="form-control"
-							name="phone"
-							placeholder="Masukkan nomor telepon penerima"
-							<?= $input->address ?>
-							/>
+							<input type="text" class="form-control" name="phone" placeholder="Masukkan nomor telepon penerima" <?= $input->address ?> />
 							<?= form_error('phone') ?>
 						</div>
 
@@ -61,22 +42,22 @@
 									</tr>
 								</thead>
 								<tbody>
-									<?php foreach($cart as $row) : ?>
-									<tr>
-										<td><?= $row->title ?></td>
-										<td><?= $row->qty ?></td>
-										<td>Rp. <?= number_format($row->price, 0, ',', '.') ?>,-</td>
-									</tr>
-									<tr>
-										<td colspan="2">Subtotal</td>
-										<td>Rp. <?= number_format($row->subtotal, 0, ',', '.') ?>,-</td>
-									</tr>
+									<?php foreach ($cart as $row) : ?>
+										<tr>
+											<td><?= $row->title ?></td>
+											<td><?= $row->qty ?></td>
+											<td>Rp. <?= number_format($row->price, 0, ',', '.') ?>,-</td>
+										</tr>
+										<tr>
+											<td colspan="2">Subtotal</td>
+											<td>Rp. <?= number_format($row->subtotal, 0, ',', '.') ?>,-</td>
+										</tr>
 									<?php endforeach; ?>
 								</tbody>
 								<tfoot>
 									<tr>
-									<th colspan="2">Total</th>
-									<th>Rp. <?= number_format(array_sum(array_column($cart, 'subtotal')), 0, ',', '.'); ?>,-</th>
+										<th colspan="2">Total</th>
+										<th>Rp. <?= number_format(array_sum(array_column($cart, 'subtotal')), 0, ',', '.'); ?>,-</th>
 									</tr>
 								</tfoot>
 							</table>

@@ -13,60 +13,44 @@
 					</div>
 				</div>
 				<?= form_open_multipart($form_action, ['method' => 'POST']) ?>
-					<?= form_hidden('id_orders', $order->id) ?>
-					<div class="card-body">
-						<div class="form-group">
-							<label for="">Transaksi</label>
-							<input
-								type="text"
-								class="form-control"
-								value="<?= $order->invoice ?>"
-								readonly
-							/>
-						</div>
-						<div class="form-group">
-							<label for="">Dari Rekening a/n</label>
-							<input type="text" name="account_name" value="<?= $input->account_name ?>" class="form-control" />
-							<?= form_error('account_name') ?>
-						</div>
-						<div class="form-group">
-							<label for="">No. Rekening</label>
-							<input type="text" name="account_number" value="<?= $input->account_number ?>" class="form-control" />
-							<?= form_error('account_number') ?>
-						</div>
-						<div class="form-group">
-							<label for="">Nominal</label>
-							<input
-								type="number"
-								class="form-control"
-								name="nominal" 
-								value="<?= $input->nominal ?>"
-							/>
-							<?= form_error('nominal') ?>
-						</div>
-						<div class="form-group">
-							<label for="">Catatan</label>
-							<textarea
-								name="note"
-								id=""
-								cols="30"
-								rows="5"
-								class="form-control"
-							>
+				<?= form_hidden('id_orders', $order->id) ?>
+				<div class="card-body">
+					<div class="form-group">
+						<label for="">Transaksi</label>
+						<input type="text" class="form-control" value="<?= $order->invoice ?>" readonly />
+					</div>
+					<div class="form-group">
+						<label for="">Dari Rekening a/n</label>
+						<input type="text" name="account_name" value="<?= $input->account_name ?>" class="form-control" />
+						<?= form_error('account_name') ?>
+					</div>
+					<div class="form-group">
+						<label for="">No. Rekening</label>
+						<input type="text" name="account_number" value="<?= $input->account_number ?>" class="form-control" />
+						<?= form_error('account_number') ?>
+					</div>
+					<div class="form-group">
+						<label for="">Nominal</label>
+						<input type="number" class="form-control" name="nominal" value="<?= $input->nominal ?>" />
+						<?= form_error('nominal') ?>
+					</div>
+					<div class="form-group">
+						<label for="">Catatan</label>
+						<textarea name="note" id="" cols="30" rows="5" class="form-control">
 							-
 							</textarea>
-						</div>
-						<div class="form-group">
-							<label for="">Bukti Transfer</label>
-							<input type="file" name="image" class="form-control" id="">
-							<?php if($this->session->set_flashdata('image_error')) :  ?>
-								<small class="form-text text-danger"><?= $this->session->set_flashdata('image_error') ?> </small>
-							<?php endif; ?>
-						</div>
 					</div>
-					<div class="card-footer">
-						<button type="submit" class="btn btn-success">Konfirmasi Pembayaran</button>
+					<div class="form-group">
+						<label for="">Bukti Transfer</label>
+						<input type="file" name="image" class="form-control" id="">
+						<?php if ($this->session->set_flashdata('image_error')) :  ?>
+							<small class="form-text text-danger"><?= $this->session->set_flashdata('image_error') ?> </small>
+						<?php endif; ?>
 					</div>
+				</div>
+				<div class="card-footer">
+					<button type="submit" class="btn btn-success">Konfirmasi Pembayaran</button>
+				</div>
 				<?= form_close() ?>
 			</div>
 		</div>

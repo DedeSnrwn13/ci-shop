@@ -28,22 +28,22 @@
 							</tr>
 						</thead>
 						<tbody>
-							<?php foreach($order_detail as $row) : ?>
-							<tr>
-								<td>
-									<p>
-										<img src="<?= $row->image ? base_url("/images/product/$row->image") : 	base_url("/images/product/default.png"); ?>" alt="" height="50" />
-										<strong><?= $row->title ?></strong>
-									</p>
-								</td>
-								<td class="text-center">Rp.  <?= number_format($row->price, 0, ',', '.') ?>,-</td>
-								<td class="text-center"><?= $row->qty ?></td>
-								<td class="text-center">Rp.<?= number_format($row->subtotal, 0, ',', '.'); ?>,-</td>
-							</tr>
-							<tr>
-								<td colspan="3"><strong>Total:</strong></td>
-								<td class="text-center"><strong>Rp. <?= number_format(array_sum(array_column($order_detail, 'subtotal')), 0, ',', '.'); ?>,-</strong></td>
-							</tr>
+							<?php foreach ($order_detail as $row) : ?>
+								<tr>
+									<td>
+										<p>
+											<img src="<?= $row->image ? base_url("/images/product/$row->image") : 	base_url("/images/product/default.png"); ?>" alt="" height="50" />
+											<strong><?= $row->title ?></strong>
+										</p>
+									</td>
+									<td class="text-center">Rp. <?= number_format($row->price, 0, ',', '.') ?>,-</td>
+									<td class="text-center"><?= $row->qty ?></td>
+									<td class="text-center">Rp.<?= number_format($row->subtotal, 0, ',', '.'); ?>,-</td>
+								</tr>
+								<tr>
+									<td colspan="3"><strong>Total:</strong></td>
+									<td class="text-center"><strong>Rp. <?= number_format(array_sum(array_column($order_detail, 'subtotal')), 0, ',', '.'); ?>,-</strong></td>
+								</tr>
 							<?php endforeach ?>
 						</tbody>
 					</table>
@@ -69,12 +69,7 @@
 						</div>
 					</div>
 					<div class="col-md-5">
-						<img
-							src="<?= base_url("/images/confirm/$order_confirm->image") ?>"
-							alt=""
-							class="img-fluid w-100"
-							height="200"
-						/>
+						<img src="<?= base_url("/images/confirm/$order_confirm->image") ?>" alt="" class="img-fluid w-100" height="200" />
 					</div>
 				</div>
 			<?php endif; ?>

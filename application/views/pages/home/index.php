@@ -7,8 +7,7 @@
 					<div class="card mb-3">
 						<div class="card-body">
 							Kategori: <strong><?= isset($category) ? $category : 'Semua Kategori' ?></strong>
-							<span class="float-right"
-								>Urutan Harga:
+							<span class="float-right">Urutan Harga:
 								<a href="<?= base_url('/shop/sortby/asc'); ?>" class="badge badge-primary">Termurah</a> |
 								<a href="<?= base_url('/shop/sortby/desc'); ?>" class="badge badge-primary">Termahal</a>
 							</span>
@@ -17,15 +16,10 @@
 				</div>
 			</div>
 			<div class="row">
-				<?php foreach($content as $row) : ?>
+				<?php foreach ($content as $row) : ?>
 					<div class="col-md-6">
 						<div class="card mb-3">
-							<img
-								src="<?= $row->image ? base_url("/images/product/$row->image") : base_url("/images/product/default.png") ?>"
-								alt=""
-								
-								class="card-img-top img-fluid"
-							/>
+							<img src="<?= $row->image ? base_url("/images/product/$row->image") : base_url("/images/product/default.png") ?>" alt="" class="card-img-top img-fluid" />
 							<div class="card-body">
 								<h5 class="card-title"><?= $row->product_title ?></h5>
 								<p class="card-text"><strong>Rp.<?= number_format($row->price, 0, ',', '.'); ?></strong></p>
@@ -89,7 +83,7 @@
 									<a href="<?= base_url("/shop/category/$category->slug") ?>"><?= $category->title ?></a>
 								</li>
 							<?php endforeach; ?>
-							
+
 						</ul>
 					</div>
 				</div>
@@ -97,5 +91,3 @@
 		</div>
 	</div>
 </main>
-
-    

@@ -20,7 +20,7 @@
 							Setakan dengan keterangan dengan nomor order:
 							<strong> <?= $content->invoice ?></strong>
 						</li>
-						<li>Total pembayaran: <strong>Rp.  <?= number_format($content->total, 0, ',', '.') ?>,-</strong></li>
+						<li>Total pembayaran: <strong>Rp. <?= number_format($content->total, 0, ',', '.') ?>,-</strong></li>
 					</ol>
 					<p>
 						Jika sudah, silahkan kirimkan bukti transfer di halaman

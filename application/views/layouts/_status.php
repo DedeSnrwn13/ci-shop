@@ -1,18 +1,18 @@
-<?php 
+<?php
 
-	if ($status == 'waiting') {
-		$badge_status = 'badge-primary';
-		$status = 'Menunggu Pembayaran';
-	} elseif ($status == 'paid') {
-		$badge_status = 'badge-secondary';
-		$status = 'Dibayar';
-	} elseif ($status == 'delivered') {
-		$badge_status = 'badge-success';
-		$status = 'Dikirim';
-	} else {
-		$badge_status = 'badge-danger';
-		$status = 'Dibatalkan';
-	}
+if ($status == 'waiting') {
+	$badge_status = 'badge-primary';
+	$status = 'Menunggu Pembayaran';
+} elseif ($status == 'paid') {
+	$badge_status = 'badge-secondary';
+	$status = 'Dibayar';
+} elseif ($status == 'delivered') {
+	$badge_status = 'badge-success';
+	$status = 'Dikirim';
+} else {
+	$badge_status = 'badge-danger';
+	$status = 'Dibatalkan';
+}
 
 ?>
 
