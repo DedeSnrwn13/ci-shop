@@ -23,9 +23,8 @@
 						<li>Total pembayaran: <strong>Rp. <?= number_format($content->total, 0, ',', '.') ?>,-</strong></li>
 					</ol>
 					<p>
-						Jika sudah, silahkan kirimkan bukti transfer di halaman
-						konfirmasi atau bisa
-						<a href="<?= base_url("/myorder/detail/$row->invoice") ?>">Klik Disini</a>!
+						Jika sudah, silahkan kirimkan bukti transfer di halaman konfirmasi atau bisa
+						<a href="<?= base_url("/myorder/detail/$content->invoice") ?>">Klik Disini</a>!
 					</p>
 					<a href="<?= base_url('/') ?>" class="btn btn-primary">
 						<i class="fas fa-angle-left"></i> Kembali
